@@ -1,0 +1,10 @@
+@import '../../../neo';
+
+:host {
+  display: block;
+  font-size: 6em;
+  font-weight: bold;
+  margin-left: 0.5em;
+  @include neo-text-shadow-inset;
+
+}

@@ -1,0 +1,41 @@
+@import 'colors';
+
+/* MIXINS */
+@mixin neo-text-shadow {
+  color: $main-color;
+  text-shadow: 5px 5px 10px #aeafaf, -5px -5px 10px #ffffff;
+}
+@mixin neo-text-shadow-inset {
+  background-color: $sceondary-color;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 2px 2px 3px rgba(white ,0.5);
+  color: transparent;
+}
+
+@mixin neo-box-shadow {
+  box-shadow: 10px 10px 20px #d3d4d4, -10px -10px 20px #ffffff;
+}
+
+/* CLASSES */
+.neo {
+  &-title {
+    position: relative;
+    padding: 20px;
+    z-index: 1;
+
+    &-high {
+      font-size: 5em;
+      display: inline-block;
+      @include neo-text-shadow;
+    }
+
+    &-normal {
+      font-size: 2em;
+      transform: translateY(0.8em);
+      display: inline-block;
+      color: #171717;
+    }
+  }
+}

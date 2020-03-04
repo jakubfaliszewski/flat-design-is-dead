@@ -1,0 +1,102 @@
+@import 'home-animations';
+@import '../../../colors';
+
+.home-entry {
+  background-color: black;
+  min-height: 90vh;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .title {
+    font-size: min(max(46px, 16vw), 29vh);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    text-align: right;
+    padding: 0 2vw 0 13vw;
+    animation: titleEntry 1s ease-in-out forwards;
+    line-height: 0.9;
+
+    &-wrapper {
+      overflow: hidden;
+    }
+
+    &-description {
+      animation: titleDescEntry 1s ease-in-out forwards;
+      animation-delay: 2s;
+      color: white;
+      position: absolute;
+      bottom: 20px;
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+      font-size: min(max(30px, 30px), 6vw);
+      opacity: 0;
+    }
+  }
+
+  .decoration-circle {
+    width: 30vw;
+    height: 30vw;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    border: 3vw solid rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+
+    &-wrapper {
+      animation: decoCircleEntry 2s ease-in-out forwards;
+      position: absolute;
+      right: 50%;
+      top: 50%;
+      transform-origin: top left;
+    }
+  }
+}
+
+.home-content {
+  position: relative;
+  background-color: $main-color;
+  padding-top: 17vw;
+  padding-bottom: 210px;
+
+  .decoration-wave {
+    position: absolute;
+    z-index: 0;
+    top: -2px;
+    pointer-events: none;
+  }
+
+  .card-content {
+    padding: 10px;
+    font-size: 1.2em;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+
+    &-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+
+      &.reverse {
+        > div:nth-child(2) {
+          grid-row: 1;
+        }
+      }
+
+      img {
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 4px;
+      }
+    }
+
+    p {
+      margin-bottom: 0.7em;
+      max-width: 900px;
+    }
+  }
+}
