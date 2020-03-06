@@ -1,27 +1,26 @@
-# Flatisdead
+# Neomorphism
+Made with ❤️  & [Angular](https://angular.io/) for WSEI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
-## Development server
+## Website assumptions
+- [ ] At least 4 subpages
+- [x] File organization should be intuituve and clear
+- [ ] Website should be responsive (360 - 1920)
+- [ ] ~~Menu items with SVG icons~~
+- [x] There's already plenty of SVGs on website - in Home page Background for example. Please look into the code.
+- [ ] Video tag on one of subpages
+- [x] Implement behavior states for menu items (static, hover, being on subpage)
+- [ ] ToDo list
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Additional functionalities
+- [x] Name od browser card indicates subpage 
+- [ ] Pricing subpage can load with parameter and load product automatically
 
-## Code scaffolding
+## Instalation
+> ### **_REMINDER_**
+> #### Website preview is available on Github
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. Grab the code using code.
+2. If you don't have Angular CLI, install it. Just follow instructions on [documentation](https://angular.io/guide/setup-local).
+3. `npm i` that bastard.
+3. Ready? Now just type `ng s -o` in console inside project directory.
