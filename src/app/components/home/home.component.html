@@ -1,88 +1,27 @@
 <section class="home-entry">
-  <div class="title-wrapper">
-    <h1 class="title">Flat Design is Dead</h1>
-    <div class="decoration-circle-wrapper">
-      <div class="decoration-circle"></div>
-    </div>
-    <p class="title-description">Dobra, chwila, już tłumaczę</p>
+  <neo-title>Hear me out</neo-title>
+  <div class="home-entry-image">
+    <div class="home-entry-image-decoration "></div>
+    <img src="./assets/headphones.png" />
   </div>
+  <shapes-background></shapes-background>
 </section>
 <section class="home-content">
   <img class="decoration-wave" src="./assets/wave.svg" />
   <div class="inner-content">
-    <h2 class="neo-title"><span class="neo-title-high">Historia</span> <span class="neo-title-normal">flat designu</span></h2>
-    <neo-card>
-      <neo-card-title>
-        2013
-      </neo-card-title>
-      <div class="card-content">
-        <p>Pamiętacie rok 2013? Benedykt XVI adbykował, Edward Snowden dostał niezłe cięgi od rządu USA i uciekł do Rosji, a <b>Windows 8 wszedł właśnie na rynek.</b></p>
-        <p>Skupmy się na tym ostatnim, okej?</p>
-        <div class="card-content-grid">
-          <div>
-            <p>Wszyscy znienawidzili UI nowego Windowsa, a w szczególności nowe Menu Start. Niektórzy pałają do niego nienawiścią po dziś dzień.</p>
-            <p>
-              <a href="https://en.wikipedia.org/wiki/Skeuomorph">Skeuomorfizm</a> odszedł do lamusa.
-              Podejście Apple do designu który starał się w miarę wiernie odwzorować rzeczywistość już wszystkim się znudziło, świat potrzebował czegoś nowego.
-            </p>
-            <p> I choć nie byliśmy gotowi na nowy system Microsoftu, to założenia jego designu stały się mokrym snem designerów.</p>
-          </div>
-          <div><img src="./assets/win8.jpg" /></div>
+    <h2 class="h2">What are you looking for?</h2>
+    <div class="cards">
+      <neo-card *ngFor="let card of cards; index as i " class="neo-button" (click)="makeCardActive(i)" [class.active]="card.active">
+        <neo-title>{{card.title}}</neo-title>
+        <img class="card-product" [src]="card.image" />
+        <div class="card-inner neo-shadow">
+          <h2>{{card.desc.title}}</h2>
+          <p>{{card.desc.content}}</p>
+          <a class="neo-button">
+            Buy
+          </a>
         </div>
-        <p>Te płaskie powierzchnie. Ta czystość, minimalizm, prostota w oddawaniu kształtów.</p>
-        <p>
-          Flat design został zaadaptowany bardzo chętnie nie tylko ze względów estetycznych. Wymagał też mniejszych umiejętności od grafików, dało się zgodnie z jego
-          wzorcami szybciej projektować oraz był prostszy do wdrożenia przez developerów.
-        </p>
-        <p>Nuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuda.</p>
-      </div>
-    </neo-card>
-    <neo-card>
-      <neo-card-title>
-        2018
-      </neo-card-title>
-      <div class="card-content ">
-        <p>Ja wiem, ja wiem. w 2020 roku flat design dalej jest niesamowicie popularny.</p>
-        <p>Ale chyba pora na coś nowego.</p>
-        <div class="card-content-grid reverse">
-          <div>
-            <p>
-              Swoją chwilę ukradł <a href="https://brutalist-web.design/">brutalizm</a>, <a href="https://www.prospectmagazine.co.uk/arts-and-books/when-did-every-brand-start-to-look-the-same">Helvetica</a>, gradienty,
-              nawet ludziom zaczęło odbijać przez wymieranie Flash Playera i zaczęli nadmiernie korzystać z canvasów.
-            </p>
-            <p>
-              Artyści zachłysnęli się synth i vaporwavem, Pantone 319...
-            </p>
-          </div>
-          <div><img src="./assets/brute.png" /></div>
-        </div>
-      </div>
-    </neo-card>
-    <neo-card>
-      <neo-card-title>
-        2020
-      </neo-card-title>
-      <div class="card-content">
-        <p>Ja wiem, ja wiem. w 2020 roku flat design dalej jest niesamowicie popularny.</p>
-        <p>Ale chyba pora na coś nowego</p>
-        <div class="card-content-grid">
-          <div>
-            <p>Wszyscy znienawidzili UI nowego Windowsa, a w szczególności nowe Menu Start. Niektórzy pałają do niego nienawiścią po dziś dzień.</p>
-            <p>
-              <a href="https://en.wikipedia.org/wiki/Skeuomorph">Skeuomorfizm</a> odszedł do lamusa.
-              Podejście Apple do designu który starał się w miarę wiernie odwzorować rzeczywistość już wszystkim się znudziło, świat potrzebował czegoś nowego.
-            </p>
-            <p> I choć nie byliśmy gotowi na nowy system Microsoftu, to założenia jego designu stały się mokrym snem designerów.</p>
-          </div>
-          <div><img src="./assets/win8.jpg" /></div>
-        </div>
-        <p>Te płaskie powierzchnie. Ta czystość, minimalizm, prostota w oddawaniu kształtów.</p>
-        <p>
-          Flat design został zaadaptowany bardzo chętnie nie tylko ze względów estetycznych. Wymagał też mniejszych umiejętności od grafików, dało się zgodnie z jego
-          wzorcami szybciej projektować oraz był prostszy do wdrożenia przez developerów.
-        </p>
-        <p>Nuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuda.</p>
-      </div>
-    </neo-card>
+      </neo-card>
+    </div>
   </div>
 </section>

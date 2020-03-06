@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\home",
+    "\\src\\app\\standalone-components",
+    "\\src\\app\\standalone-components\\shapes-background",
+    "\\src\\assets"
+  ],
+  "SelectedNode": "\\src\\app\\standalone-components\\shapes-background\\shapes-background.component.scss",
+  "PreviewInSolutionExplorer": false
+}

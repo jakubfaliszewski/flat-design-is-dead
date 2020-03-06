@@ -3,39 +3,98 @@
 /* MIXINS */
 @mixin neo-text-shadow {
   color: $main-color;
-  text-shadow: 5px 5px 10px #aeafaf, -5px -5px 10px #ffffff;
+  text-shadow: 5px 5px 7px #aeafaf, -5px -5px 7px #ffffff;
 }
+
 @mixin neo-text-shadow-inset {
   background-color: $sceondary-color;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
-  text-shadow: 2px 2px 3px rgba(white ,0.5);
+  text-shadow: 2px 2px 3px rgba(white,0.5);
   color: transparent;
 }
 
 @mixin neo-box-shadow {
-  box-shadow: 10px 10px 20px #d3d4d4, -10px -10px 20px #ffffff;
+  box-shadow: 7px 7px 14px #c4cdd9, -7px -7px 14px #ffffff;
+}
+
+
+@mixin neo-box-shadow-inset {
+  box-shadow: inset 20px 20px 60px #c4cdd9, inset -20px -20px 60px #ffffff;
+}
+
+@mixin neo-box-shadow-small {
+  box-shadow: inset 5px 5px 7px rgba(#c4cdd9,0), inset -5px -5px 7px rgba(#ffffff, 0), 5px 5px 10px #c4cdd9, -5px -5px 10px #ffffff;
+}
+
+@mixin neo-box-shadow-small-hover {
+  box-shadow: inset 5px 5px 7px rgba(#c4cdd9,0), inset -5px -5px 7px rgba(#ffffff, 0), 2px 2px 2px #c4cdd9, -2px -2px 2px #ffffff;
+}
+
+@mixin neo-box-shadow-small-inset {
+  box-shadow: inset 5px 5px 7px #c4cdd9, inset -5px -5px 7px #ffffff, 5px 5px 10px rgba(#c4cdd9,0), -5px -5px 10px rgba(#ffffff,0);
+}
+
+@mixin neo-box-shadow-small-inset-hover {
+  box-shadow: inset 4px 4px 4px #c4cdd9, inset -4px -4px 4px #ffffff, 5px 5px 10px rgba(#c4cdd9,0), -5px -5px 10px rgba(#ffffff,0);
 }
 
 /* CLASSES */
 .neo {
   &-title {
-    position: relative;
-    padding: 20px;
-    z-index: 1;
+    font-size: min(max(46px, 12vw), 21vh);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    text-align: right;
+    padding: 0 13vw 0 2vw;
+    -webkit-animation: titleEntry 1s ease-in-out forwards;
+    animation: titleEntry 1s ease-in-out forwards;
+    line-height: 0.9;
+    text-align: left;
 
-    &-high {
-      font-size: 5em;
-      display: inline-block;
-      @include neo-text-shadow;
+
+    @include neo-text-shadow;
+  }
+
+  &-shadow {
+    @include neo-box-shadow;
+  }
+
+  &-shadow-inset {
+    @include neo-box-shadow-inset;
+  }
+
+  &-button {
+    display: block;
+    border-radius: 24%;
+    padding: 12px 8px;
+    display: block;
+    border-radius: 14px;
+    padding: 12px 28px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-color;
+    transition: 0.4s;
+    backdrop-filter: blur(4px);
+    text-align: center;
+    align-items: center;
+    display: flex;
+
+    @include neo-box-shadow-small;
+
+    &:hover {
+      @include neo-box-shadow-small-hover;
     }
 
-    &-normal {
-      font-size: 2em;
-      transform: translateY(0.8em);
-      display: inline-block;
-      color: #171717;
+    &.active {
+      @include neo-box-shadow-small-inset;
+
+      &:hover {
+        @include neo-box-shadow-small-inset-hover;
+      }
     }
   }
 }

@@ -1,58 +1,49 @@
-@import 'home-animations';
 @import '../../../colors';
+@import '../../../neo';
 
 .home-entry {
-  background-color: black;
+  background-color: #f7f7f7;
   min-height: 90vh;
   max-height: 90vh;
   display: flex;
   align-items: center;
   position: relative;
+  justify-content: space-evenly;
+  overflow: hidden;
+  z-index: 2;
 
-  .title {
-    font-size: min(max(46px, 16vw), 29vh);
-    font-weight: 900;
-    text-transform: uppercase;
-    color: white;
-    text-align: right;
-    padding: 0 2vw 0 13vw;
-    animation: titleEntry 1s ease-in-out forwards;
-    line-height: 0.9;
+  &-image {
+    width: 50%;
+    height: 50%;
+    max-width: 600px;
+    max-height: 600px;
+    position: relative;
 
-    &-wrapper {
-      overflow: hidden;
-    }
-
-    &-description {
-      animation: titleDescEntry 1s ease-in-out forwards;
-      animation-delay: 2s;
-      color: white;
-      position: absolute;
-      bottom: 20px;
-      font-weight: bold;
+    img {
       width: 100%;
-      text-align: center;
-      font-size: min(max(30px, 30px), 6vw);
-      opacity: 0;
+      animation: imageEntry 1.5s ease-in-out forwards;
     }
-  }
 
-  .decoration-circle {
-    width: 30vw;
-    height: 30vw;
-    transform: translateX(-50%) translateY(-50%);
-    border-radius: 50%;
-    border: 3vw solid rgba(255, 255, 255, 1);
-    box-sizing: border-box;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-
-    &-wrapper {
-      animation: decoCircleEntry 2s ease-in-out forwards;
+    &-decoration {
       position: absolute;
-      right: 50%;
-      top: 50%;
-      transform-origin: top left;
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      bottom: 23%;
+      left: 7%;
+      animation: imageEntry 2s ease-out forwards;
+      @include neo-box-shadow;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        top: 10%;
+        left: 10%;
+        @include neo-box-shadow-inset;
+      }
     }
   }
 }
@@ -60,7 +51,7 @@
 .home-content {
   position: relative;
   background-color: $main-color;
-  padding-top: 17vw;
+  padding-top: 18vw;
   padding-bottom: 210px;
 
   .decoration-wave {
@@ -68,35 +59,131 @@
     z-index: 0;
     top: -2px;
     pointer-events: none;
+    filter: drop-shadow(10px 10px 12px #c4cdd9);
   }
 
-  .card-content {
-    padding: 10px;
-    font-size: 1.2em;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
+  .cards {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
 
-    &-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 20px;
 
-      &.reverse {
-        > div:nth-child(2) {
-          grid-row: 1;
+    neo-card {
+      width: 300px;
+      max-width: 30%;
+      height: 400px;
+      transition: 0.5s;
+      flex-grow: 0.2;
+      min-width: 20%;
+      flex-grow: 0.3;
+
+      neo-title {
+        position: absolute;
+        top: 0;
+        text-align: left;
+        margin: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .card-inner {
+        position: absolute;
+        bottom: 40px;
+        width: 80%;
+        left: 10%;
+        height: 60%;
+        border-radius: 20px;
+        transition: 0.5s;
+        background: $main-color;
+        justify-content: space-between;
+        transform: translateY(20%);
+        pointer-events: none;
+        opacity: 0;
+
+        .neo-button {
+          margin-bottom: 20px;
+          align-self: center;
         }
       }
 
-      img {
+      .card-product {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        margin: 10px 0;
-        border-radius: 4px;
+        height: 100%;
+        object-fit: contain;
+        transition: 0.5s;
+      }
+
+      &.active {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        min-width: 50%;
+
+        .card-inner {
+          transition-delay: 0.2s;
+          display: flex;
+          flex-direction: column;
+          transform: translateY(0);
+          pointer-events: auto;
+          opacity: 1;
+
+          h2 {
+            padding: 20px;
+            text-align: right;
+            font-size: 30px;
+          }
+
+          p {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 1.4em;
+            padding: 1em;
+            box-sizing: border-box;
+          }
+        }
+
+        .card-product {
+          width: 8em;
+          height: 8em;
+          top: 10px;
+          right: 10px;
+          left: unset;
+        }
+      }
+
+      &:nth-of-type(1) {
+        margin-top: 100px;
+      }
+
+      &:nth-of-type(2) {
+        margin-top: 50px;
       }
     }
+  }
+}
 
-    p {
-      margin-bottom: 0.7em;
-      max-width: 900px;
-    }
+@keyframes imageEntry {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

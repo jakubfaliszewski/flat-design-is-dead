@@ -1,0 +1,64 @@
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: rotate(20deg);
+  animation: woooHooo 15s linear infinite;
+
+  img {
+    width: 50px;
+    position: absolute;
+    pointer-events: none;
+
+    @for $i from 0 to 15 {
+      &:nth-of-type(#{$i}) {
+        animation: wooHoo linear infinite;
+        animation-duration: random(6) + 10 + s;
+        animation-delay: random(6) - 20 + s;
+        left: random(100) / 100 * 100%;
+        top: random(100) / 100 * 100%;
+      }
+    }
+  }
+}
+
+@keyframes woooHooo {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+     transform: rotate(360deg);
+  }
+}
+
+
+@keyframes wooHoo {
+  0% {
+    transform: translateX(0) rotate(100deg);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateX(100vw) rotate(20deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(0) rotate(-80deg);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateX(-100vw) rotate(30deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(100deg);
+    opacity: 1;
+  }
+}

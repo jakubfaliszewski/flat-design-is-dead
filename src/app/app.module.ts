@@ -5,15 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NeoCardComponent } from './standalone-components/neo-card/neo-card.component';
-import { NeoCardTitleComponent } from './standalone-components/neo-card-title/neo-card-title.component';
+import { NeoTitleComponent } from './standalone-components/neo-title/neo-title.component';
+import { NeoMenuComponent } from './standalone-components/neo-menu/neo-menu.component';
+import { ShapesBackgroundComponent } from './standalone-components/shapes-background/shapes-background.component';
+import { PricingComponent } from './components/pricing/pricing.component';
 
 const customComponents = [
-  HomeComponent
+  HomeComponent,
+  PricingComponent,
 ];
 
 const standaloneComponents = [
   NeoCardComponent,
-  NeoCardTitleComponent
+  NeoTitleComponent,
+  NeoMenuComponent,
+  ShapesBackgroundComponent
 ];
 
 @NgModule({
@@ -21,7 +27,6 @@ const standaloneComponents = [
     AppComponent,
     customComponents,
     standaloneComponents,
-    
   ],
   imports: [
     BrowserModule,

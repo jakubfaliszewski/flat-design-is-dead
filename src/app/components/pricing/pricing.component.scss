@@ -1,0 +1,14 @@
+@import '../../../colors';
+@import '../../../neo';
+
+.pricing {
+  background-color: $main-color;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-evenly;
+  overflow: hidden;
+  z-index: 2;
+}

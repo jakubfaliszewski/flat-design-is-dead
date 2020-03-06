@@ -1,0 +1,7 @@
+<nav class="neo-menu">
+  <ul>
+    <li *ngFor="let route of routes">
+      <a class="neo-button" [class.active]="route.url === currentRoute" (click)="changePage(route.url)">{{route.visibleName}}</a>
+    </li>
+  </ul>
+</nav>
