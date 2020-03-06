@@ -1,1 +1,7 @@
-<section class="pricing"></section>
+<section class="pricing">
+  <neo-slider>
+    <div neoslide *ngFor="let card of cards">
+      {{card.title}}
+    </div>
+  </neo-slider>
+</section>

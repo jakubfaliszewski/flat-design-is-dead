@@ -9,6 +9,7 @@ import { NeoTitleComponent } from './standalone-components/neo-title/neo-title.c
 import { NeoMenuComponent } from './standalone-components/neo-menu/neo-menu.component';
 import { ShapesBackgroundComponent } from './standalone-components/shapes-background/shapes-background.component';
 import { PricingComponent } from './components/pricing/pricing.component';
+import { NeoSliderComponent } from './standalone-components/neo-slider/neo-slider.component';
 
 const customComponents = [
   HomeComponent,
@@ -19,6 +20,7 @@ const standaloneComponents = [
   NeoCardComponent,
   NeoTitleComponent,
   NeoMenuComponent,
+  NeoSliderComponent,
   ShapesBackgroundComponent
 ];
 

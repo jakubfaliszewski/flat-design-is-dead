@@ -7,3 +7,13 @@ export interface ICard {
     content: string
   }
 }
+
+export interface ISlider {
+  slides: HTMLElement[],
+  length: number,
+}
+
+export class Slider {
+  slides: [];
+  length: 0;
+}
