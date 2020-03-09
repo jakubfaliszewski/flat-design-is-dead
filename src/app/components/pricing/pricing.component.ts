@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICard } from '../../interfaces';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'neo-pricing',
@@ -38,9 +39,13 @@ export class PricingComponent implements OnInit {
     }];
 
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  slideChanged(index: number) {
+    console.info(`Slide changed to ${index}`);
   }
 
 }

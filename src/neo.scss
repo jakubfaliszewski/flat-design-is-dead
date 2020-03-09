@@ -82,6 +82,9 @@
     text-align: center;
     align-items: center;
     display: flex;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    background: none;
 
     @include neo-box-shadow-small;
 
@@ -96,14 +99,26 @@
         @include neo-box-shadow-small-inset-hover;
       }
     }
+
+    &.contentless {
+      padding: 0;
+    }
+
+    &:focus {
+      outline: 0;
+      border: 2px solid rgba($text-color, 0.1);
+    }
   }
 
   &-slide {
     position: absolute;
     top: 0;
-    right: 0;
+    width: 100%;
     bottom: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

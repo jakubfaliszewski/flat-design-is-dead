@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICard } from './../../interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'neo-home',
@@ -35,12 +36,10 @@ export class HomeComponent implements OnInit {
     }
   }];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
-  ng
 
   makeCardActive(cardIndex) {
     let card: ICard = null;
@@ -54,6 +53,11 @@ export class HomeComponent implements OnInit {
     card.active = true;
 
     console.log(this.cards);
+  }
+
+  goToProduct(index) {
+    sessionStorage.setItem('currentSlide', index + '');
+    this.router.navigate(['pricing']);
   }
 
 }

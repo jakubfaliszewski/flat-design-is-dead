@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChildren, ViewChild, ContentChildren, Directive, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChildren, ViewChild, ContentChildren, Directive, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { NeoTitleComponent } from '../neo-title/neo-title.component';
-import { ISlider, Slider } from '../../interfaces';
+import { ISlider, Slider, SliderState } from '../../interfaces';
 
 @Component({
   selector: 'neo-slider',
   templateUrl: './neo-slider.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./neo-slider.component.scss']
 })
 
@@ -15,13 +16,15 @@ import { ISlider, Slider } from '../../interfaces';
 export class NeoSliderComponent implements OnInit {
   @ViewChild(NeoTitleComponent) childQuery;
   slider: ISlider = new Slider;
-  constructor(private elt: ElementRef) { }
+  @Output() slideChange: EventEmitter<number> = new EventEmitter();
+
+  constructor(private elt: ElementRef, private ref: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit() {
-    const children:HTMLElement[] = this.elt.nativeElement.childNodes ;
+    const children: HTMLElement[] = this.elt.nativeElement.childNodes[0].children;
     let slides = [];
 
     for (let ch of children) {
@@ -29,17 +32,35 @@ export class NeoSliderComponent implements OnInit {
     }
 
     this.renderSlider(slides);
+    this.ref.detectChanges();
+  }
+
+  getEntrySlide() {
+    let currentSlideStorage = sessionStorage.getItem('currentSlide');
+    if (currentSlideStorage)
+      this.slider.current = parseInt(currentSlideStorage);
   }
 
   renderSlider(slides: HTMLElement[]) {
-    for (let slide of slides) {
+    this.getEntrySlide();
+    for (let slideIndex in slides) {
+      let slide = slides[slideIndex];
       slide.classList.add('neo-slide');
+      slide.style.left = 100 * parseInt(slideIndex) + '%';
     }
 
     this.slider.slides = slides;
     this.slider.length = slides.length;
-
-
-    console.log(this.slider);
+    this.slider.state = SliderState.READY;
+    this.ref.detectChanges();
   }
+
+  changeSlide(index: number) {
+    this.slideChange.emit(index);
+    this.slider.current = index;
+    sessionStorage.setItem('currentSlide', index + '');
+    this.ref.detectChanges();
+
+  }
+
 }

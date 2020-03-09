@@ -11,4 +11,25 @@
   justify-content: space-evenly;
   overflow: hidden;
   z-index: 2;
+
+  neo-slider {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    bottom: 10%;
+    left: 10%;
+    width: auto;
+  }
+
+  &-slide {
+    text-transform: uppercase;
+  }
+
+  &-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+  }
 }

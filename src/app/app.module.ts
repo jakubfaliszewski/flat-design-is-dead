@@ -10,6 +10,7 @@ import { NeoMenuComponent } from './standalone-components/neo-menu/neo-menu.comp
 import { ShapesBackgroundComponent } from './standalone-components/shapes-background/shapes-background.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { NeoSliderComponent } from './standalone-components/neo-slider/neo-slider.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const customComponents = [
   HomeComponent,
@@ -32,7 +33,8 @@ const standaloneComponents = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

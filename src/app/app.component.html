@@ -1,2 +1,5 @@
 <neo-menu></neo-menu>
-<router-outlet></router-outlet>
+<main [@routeAnimations]="o && o.activatedRouteData
+      && o.activatedRouteData['animation']">
+  <router-outlet #o="outlet"></router-outlet>
+</main>

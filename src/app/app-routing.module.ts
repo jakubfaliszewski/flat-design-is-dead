@@ -5,9 +5,8 @@ import { PricingComponent } from './components/pricing/pricing.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, data: { name: 'home' } },
-  { path: 'pricing', component: PricingComponent, data: { name: 'pricing' } },
-  { path: 'pricing/:productName', component: PricingComponent, data: { name: 'pricing' } },
+  { path: '', component: HomeComponent, data: { name: 'home', animation: 'Home' } },
+  { path: 'pricing', component: PricingComponent, data: { name: 'pricing', animation: 'Pricing' } },
   { path: '**', redirectTo: '' }
 
 ];

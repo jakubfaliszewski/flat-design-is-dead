@@ -8,12 +8,28 @@ export interface ICard {
   }
 }
 
+
+
+export enum SliderState {
+  LOADING,
+  READY
+}
 export interface ISlider {
   slides: HTMLElement[],
+  current: number;
   length: number,
+  state: SliderState
 }
 
-export class Slider {
+export class Slider implements ISlider {
   slides: [];
+  current: 0;
   length: 0;
+  state: SliderState.LOADING;
+  constructor() {
+    this.slides = [];
+    this.current = 0;
+    this.length = 0;
+    this.state = SliderState.LOADING;
+  }
 }

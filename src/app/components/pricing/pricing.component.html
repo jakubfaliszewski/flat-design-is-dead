@@ -1,7 +1,8 @@
 <section class="pricing">
-  <neo-slider>
-    <div neoslide *ngFor="let card of cards">
-      {{card.title}}
+  <neo-slider (slideChange)="slideChanged($event)" >
+    <div neoslide *ngFor="let card of cards" class="pricing-slide">
+      <neo-title>{{card.title}}</neo-title>
+      <img class="pricing-image" [src]="card.image" />
     </div>
   </neo-slider>
 </section>

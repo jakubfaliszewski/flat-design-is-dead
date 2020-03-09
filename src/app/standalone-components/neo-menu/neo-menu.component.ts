@@ -44,7 +44,6 @@ export class NeoMenuComponent implements OnInit {
       setTimeout(() => {
         this.title.setTitle("Neomorphism - " + this.route.snapshot.children[0].data.name);
         this.currentRoute = this.router.routerState.snapshot.url;
-        console.log(this.currentRoute);
       }, 50);
       setTimeout(() => {
         this.loading = false;
@@ -60,7 +59,6 @@ export class NeoMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.routes);
   }
 
   changePage(url) {
