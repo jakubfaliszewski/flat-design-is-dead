@@ -10,11 +10,12 @@ Made with ❤️  & [Angular](https://angular.io/) for WSEI
 - [x] There's already plenty of SVGs on website - in Home page Background for example. Please look into the code.
 - [ ] Video tag on one of subpages
 - [x] Implement behavior states for menu items (static, hover, being on subpage)
-- [ ] ToDo list
-
+- [ ] ~~ToDo List~~
+- [x] Basket for products
 ## Additional functionalities
 - [x] Name od browser card indicates subpage 
-- [ ] Pricing subpage can load with parameter and load product automatically
+- [x] Basket & state of prcicing page is remembered by local/session storage
+- [x] Custom carousel component
 
 ## Instalation
 > ### **_REMINDER_**
