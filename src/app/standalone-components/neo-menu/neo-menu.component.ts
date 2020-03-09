@@ -9,10 +9,37 @@ import {
   ActivatedRoute
 } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { BasketService } from '../../services/basket.service';
+import { Subscription } from 'rxjs';
+import { IBasket } from '../../globals';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'neo-menu',
   templateUrl: './neo-menu.component.html',
+  animations: [
+    trigger(
+      'inOutAnimation',
+      [
+        transition(
+          ':enter',
+          [
+            style({ opacity: 0, transform: 'translateX(120%)' }),
+            animate('0.4s ease-out',
+              style({ opacity: 1, transform: 'translateX(0)' }))
+          ]
+        ),
+        transition(
+          ':leave',
+          [
+            style({ opacity: 1, transform: 'translateX(0)' }),
+            animate('0.2s ease-in',
+              style({ opacity: 0, transform: 'translateX(50%)' }))
+          ]
+        )
+      ]
+    )
+  ],
   styleUrls: ['./neo-menu.component.scss']
 })
 export class NeoMenuComponent implements OnInit {
@@ -28,9 +55,13 @@ export class NeoMenuComponent implements OnInit {
   ];
 
   currentRoute = '/';
+  basketSub: Subscription;
+  menuBasket: IBasket;
   loading: boolean = true;
+  basketVisible: boolean = false;
+  addToBasketModal: boolean = false;
 
-  constructor(private router: Router, private route: ActivatedRoute, private title: Title) {
+  constructor(private router: Router, private route: ActivatedRoute, private title: Title, public basketService: BasketService) {
     this.router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event)
     })
@@ -39,6 +70,7 @@ export class NeoMenuComponent implements OnInit {
   navigationInterceptor(event: RouterEvent): void {
     if (event instanceof NavigationStart) {
       this.loading = true;
+      this.basketVisible = false;
     }
     if (event instanceof NavigationEnd) {
       setTimeout(() => {
@@ -59,10 +91,22 @@ export class NeoMenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.menuBasket = this.basketService.basket;
+    console.log(this.menuBasket);
+    this.basketSub = this.basketService.getBasketChange()
+      .subscribe(item => { this.menuBasket = item });
+  }
+
+  removeFromBasket(itemIndex) {
+    this.basketService.removeFromBasket(itemIndex);
   }
 
   changePage(url) {
     this.router.navigate([url]);
+  }
+
+  openModal() {
+    this.basketService.modalVisible = true;
   }
 
 }

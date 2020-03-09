@@ -1,0 +1,55 @@
+@import '../../../neo';
+@import '../../../colors';
+
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  z-index: 10;
+
+  .modal {
+    margin: auto;
+    width: 1200px;
+    height: 600px;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 20px;
+    background: #f7f7f7;
+    z-index: 11;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include neo-box-shadow;
+
+    &-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 9;
+      background-color: rgba(#f7f7f7, 0.4);
+    }
+
+    neo-title {
+      position: absolute;
+      top: 0.5em;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      z-index: 12;
+      padding: 30px;
+      background: #f7f7f7;
+      border-radius: 20px;
+      align-items: flex-start;
+    }
+  }
+}

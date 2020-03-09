@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChildren, ViewChild, ContentChildren, Directive, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { NeoTitleComponent } from '../neo-title/neo-title.component';
-import { ISlider, Slider, SliderState } from '../../interfaces';
+import { ISlider, Slider, SliderState } from '../../globals';
 
 @Component({
   selector: 'neo-slider',
@@ -59,6 +59,12 @@ export class NeoSliderComponent implements OnInit {
     this.slideChange.emit(index);
     this.slider.current = index;
     sessionStorage.setItem('currentSlide', index + '');
+    for (let slideIndex in this.slider.slides) {
+      let slide = this.slider.slides[slideIndex];
+      if (parseInt(slideIndex) === index)
+        slide.classList.remove('hidden')
+      else slide.classList.add("hidden");
+    }
     this.ref.detectChanges();
 
   }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ShapesBackgroundComponent } from './standalone-components/shapes-backgr
 import { PricingComponent } from './components/pricing/pricing.component';
 import { NeoSliderComponent } from './standalone-components/neo-slider/neo-slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddToBasketModalComponent } from './standalone-components/add-to-basket-modal/add-to-basket-modal.component';
 
 const customComponents = [
   HomeComponent,
@@ -22,6 +24,7 @@ const standaloneComponents = [
   NeoTitleComponent,
   NeoMenuComponent,
   NeoSliderComponent,
+  AddToBasketModalComponent,
   ShapesBackgroundComponent
 ];
 
@@ -34,7 +37,8 @@ const standaloneComponents = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

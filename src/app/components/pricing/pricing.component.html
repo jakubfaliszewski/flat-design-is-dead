@@ -1,8 +1,15 @@
 <section class="pricing">
-  <neo-slider (slideChange)="slideChanged($event)" >
-    <div neoslide *ngFor="let card of cards" class="pricing-slide">
-      <neo-title>{{card.title}}</neo-title>
-      <img class="pricing-image" [src]="card.image" />
-    </div>
-  </neo-slider>
+  <div class="inner-content">
+    <neo-slider (slideChange)="slideChanged($event)">
+      <div neoslide *ngFor="let card of cards; index as i" class="pricing-slide" [class.hidden]="">
+        <neo-title>{{card.title}}</neo-title>
+        <div class="pricing-info" [style.color]="card.color">
+          <h2 class="h2">{{card.price | currency}}</h2>
+          <p>{{card.desc.content}}</p>
+          <button class="neo-button" (click)="buyProduct(i)">Lose your money</button>
+        </div>
+        <img class="pricing-image" [src]="card.image" />
+      </div>
+    </neo-slider>
+  </div>
 </section>

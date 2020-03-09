@@ -18,4 +18,17 @@ body {
     font-size: 66px;
 }
 
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  @include neo-box-shadow-vsmall-inset;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $text-color;
+  border-radius: 10px;
+}

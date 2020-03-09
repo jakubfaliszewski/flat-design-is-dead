@@ -12,23 +12,49 @@
   overflow: hidden;
   z-index: 2;
 
+  .inner-content {
+    height: 100vh;
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
   neo-slider {
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    bottom: 10%;
-    left: 10%;
-    width: auto;
+    width: 100%;
+    margin: 10% 0;
   }
 
   &-slide {
     text-transform: uppercase;
+    transition: opacity 0.2s;
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
+  &-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    neo-title {
+      font-size: 10em;
+      margin: 0;
+    }
+
+    p {
+      margin: 20px;
+      font-size: 2em;
+      width: 450px;
+    }
   }
 
   &-image {
     position: absolute;
-    width: 100%;
+    width: 60%;
     height: 100%;
+    right:0;
     object-fit: contain;
     z-index: -1;
   }

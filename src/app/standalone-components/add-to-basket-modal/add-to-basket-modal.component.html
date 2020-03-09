@@ -1,0 +1,12 @@
+
+<div class="modal-bg" (click)="basketService.modalVisible=false">
+</div>
+<div class="modal">
+  <neo-title>Add new product to basket</neo-title>
+  <form class="neo-shadow-small" (ngSubmit)="addProduct()">
+    <input class="neo-input" type="text" [(ngModel)]="newProduct.title" name="title" />
+    <input class="neo-input" type="file" (change)="convertImage($event)" name="image" />
+    <input class="neo-input" type="number" min="1" max="999" [(ngModel)]="newProduct.price" name="price" />
+    <button class="neo-button">Add product</button>
+  </form>
+</div>
