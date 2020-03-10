@@ -5,10 +5,10 @@ Made with ❤️  & [Angular](https://angular.io/) for WSEI
 ## Website assumptions
 - [ ] At least 4 subpages.
 - [x] File organization should be intuituve and clear.
-- [ ] Website should be responsive (360 - 1920).
+- [x] Website should be responsive (360 - 1920).
 - [ ] ~~Menu items with SVG icons~~
 - [x] There's already plenty of SVGs on website - in Home page Background for example. Please look into the code.
-- [ ] Video tag on one of subpages.
+- [x] Video tag on one of subpages.
 - [x] Implement behavior states for menu items (static, hover, being on subpage)
 - [ ] ~~ToDo List~~
 - [x] Basket for products. You can add your own custom products.
