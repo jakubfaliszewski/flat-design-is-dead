@@ -23,6 +23,7 @@ Made with ❤️  & [Angular](https://angular.io/) for WSEI
 ## Instalation
 > ### **_REMINDER_**
 > #### Website preview is available on Github
+> #### https://jakubfaliszewski.github.io/neomorph/
 
 1. Grab the code using code.
 2. If you don't have Angular CLI, install it. Just follow instructions on [documentation](https://angular.io/guide/setup-local).
