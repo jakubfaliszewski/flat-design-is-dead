@@ -1,0 +1,93 @@
+
+@import '../../../colors';
+@import '../../../neo';
+
+:host {
+  background-color: $main-color;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-evenly;
+  overflow: hidden;
+  z-index: 2;
+
+
+  .video {
+    &-player {
+      width: auto;
+      height: auto;
+      max-width: 90%;
+      position: relative;
+      padding-bottom: 50px;
+
+      video {
+        border-radius: 20px;
+        width: 100%;
+      }
+    }
+
+    &-controls {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 14px;
+      box-sizing: border-box;
+      bottom: -16px;
+      height: 60px;
+      border-radius: 20px;
+      @include neo-box-shadow-vsmall-inset;
+
+      .neo-button {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        user-select: none;
+
+        img {
+          width: 24px;
+          fill: #a3c7e3;
+        }
+      }
+
+      .play {
+      }
+
+      .stop {
+      }
+
+      .timer {
+        flex: 1;
+        height: 10px;
+        margin: 0 10px;
+        border-radius: 4px;
+        overflow: hidden;
+        cursor: pointer;
+
+        @include neo-box-shadow-vsmall-inset;
+
+        &-progress {
+          background-color: $text-color;
+          width: 100%;
+          height: 100%;
+          transform-origin: left;
+          transition: 220ms;
+          transition-timing-function: linear;
+        }
+      }
+    }
+
+    &-time {
+      display: block;
+      width: 3em;
+      text-align: center;
+      font-family: monospace;
+      font-size: 1.4em;
+    }
+  }
+}

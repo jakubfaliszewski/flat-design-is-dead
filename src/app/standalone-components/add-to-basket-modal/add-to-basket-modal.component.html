@@ -2,11 +2,13 @@
 <div class="modal-bg" (click)="basketService.modalVisible=false">
 </div>
 <div class="modal">
+  <button class="neo-button modal-close"(click)="basketService.modalVisible=false"><img src="./assets/close.svg" /></button>
   <neo-title>Add new product to basket</neo-title>
   <form class="neo-shadow-small" (ngSubmit)="addProduct()">
     <input class="neo-input" type="text" [(ngModel)]="newProduct.title" name="title" />
-    <input class="neo-input" type="file" (change)="convertImage($event)" name="image" />
     <input class="neo-input" type="number" min="1" max="999" [(ngModel)]="newProduct.price" name="price" />
+    <input class="neo-input" type="file" (change)="convertImage($event)" name="image" id="image" accept="image/*" [class.loading]="newProduct.image === 'none'" [class.loaded]="newProduct.image && newProduct.image !== 'none'" />
+    <label for="image" class="neo-input">Choose image file <img src="./assets/check.svg" /></label>
     <button class="neo-button">Add product</button>
   </form>
 </div>

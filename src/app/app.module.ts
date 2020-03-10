@@ -13,10 +13,14 @@ import { PricingComponent } from './components/pricing/pricing.component';
 import { NeoSliderComponent } from './standalone-components/neo-slider/neo-slider.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddToBasketModalComponent } from './standalone-components/add-to-basket-modal/add-to-basket-modal.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DemoComponent } from './components/demo/demo.component';
 
 const customComponents = [
   HomeComponent,
   PricingComponent,
+  DemoComponent,
+  NotFoundComponent,
 ];
 
 const standaloneComponents = [

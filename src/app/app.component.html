@@ -1,5 +1,5 @@
 <neo-menu></neo-menu>
 <main [@routeAnimations]="o && o.activatedRouteData
       && o.activatedRouteData['animation']">
-  <router-outlet #o="outlet"></router-outlet>
+  <router-outlet #o="outlet" (activate)="onActivate($event)"></router-outlet>
 </main>

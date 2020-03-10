@@ -1,0 +1,17 @@
+<div class="video-player">
+  <video class="neo-shadow" #nativeVideo>
+    <source src="./assets/video-sample.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="video-controls">
+    <button class="play neo-button" aria-label="play pause toggle" (click)="playVideo()">
+      <img src="./assets/play.svg" *ngIf="!video.play" />
+      <img src="./assets/pause.svg" *ngIf="video.play" />
+    </button>
+    <div class="timer" (click)="clickOnProgress($event)">
+      <div class="timer-progress" [style.transform]="'scaleX(' + video.progress + ')'" >
+      </div>
+    </div>
+      <span class="video-time" aria-label="timer">{{video.time.minutes | number:'2.0'}}:{{video.time.seconds | number:'2.0'}}</span>
+  </div>
+</div>

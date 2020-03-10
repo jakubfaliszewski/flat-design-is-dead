@@ -39,7 +39,7 @@ const slideToRight = [
 
 export const slideInAnimation =
   trigger('routeAnimations', [
-    transition('Home => Pricing', slideToLeft),
-    transition('Pricing => Home', slideToRight),
-    
+    transition(':increment', slideToLeft),
+    transition(':decrement', slideToRight),
   ]);
+

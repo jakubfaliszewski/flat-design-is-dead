@@ -51,6 +51,10 @@ export class NeoMenuComponent implements OnInit {
     {
       visibleName: 'Pricing',
       url: '/pricing'
+    },
+    {
+      visibleName: 'Demo',
+      url: '/demo'
     }
   ];
 
@@ -92,7 +96,6 @@ export class NeoMenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuBasket = this.basketService.basket;
-    console.log(this.menuBasket);
     this.basketSub = this.basketService.getBasketChange()
       .subscribe(item => { this.menuBasket = item });
   }

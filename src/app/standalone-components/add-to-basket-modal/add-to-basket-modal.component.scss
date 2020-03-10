@@ -32,7 +32,7 @@
       bottom: 0;
       right: 0;
       z-index: 9;
-      background-color: rgba(#f7f7f7, 0.4);
+      background-color: rgba(#f7f7f7, 0.7);
     }
 
     neo-title {
@@ -50,6 +50,26 @@
       background: #f7f7f7;
       border-radius: 20px;
       align-items: flex-start;
+
+      .neo-input[type="file"] + label {
+        align-self: flex-end;
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 0;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+
+      img {
+        width: 24px;
+        fill: #a3c7e3;
+      }
     }
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { slideInAnimation } from './router-animations';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,10 @@ import { slideInAnimation } from './router-animations';
   animations: [slideInAnimation]
 })
 export class AppComponent {
-  title = 'flatisdead';
+  animationState: number;
+  constructor(private route: ActivatedRoute) { }
+
+  onActivate($event) {
+    this.animationState = this.route.firstChild.snapshot.data['routeIdx'];
+  }
 }

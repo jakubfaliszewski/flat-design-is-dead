@@ -120,6 +120,10 @@
       outline: 0;
       border: 2px solid rgba($text-color, 0.1);
     }
+
+    &[disabled]{
+        box-shadow: none;
+    }
   }
 
   &-slide {
@@ -144,11 +148,58 @@
     border: 2px solid transparent;
     width: 300px;
     @include neo-box-shadow-vsmall-inset;
+    transition: 0.4s;
+    font-family: inherit;
+    height: 1.3em;
+    line-height: 1.3em;
 
     &:focus {
       outline: 0;
-      border: 2px solid rgba($text-color, 0.1);
+      @include neo-box-shadow-small;
+    }
+
+    &[type="file"] {
+      display: none;
+
+      & + label {
+        position: relative;
+        @include neo-box-shadow-small;
+
+        &:hover {
+          @include neo-box-shadow-small-hover;
+        }
+
+        img {
+          position: absolute;
+          right: 10px;
+          top: 10%;
+          height: 80%;
+          opacity: 0;
+          pointer-events: none;
+          transition: 0.3s;
+        }
+      }
+
+      &.loading + label {
+        animation: blink 1s infinite alternate-reverse;
+      }
+
+      &.loaded + label {
+        @include neo-box-shadow-vsmall-inset;
+
+        img {
+          opacity: 1;
+        }
+      }
     }
   }
 }
 
+@keyframes blink{
+    from{
+        opacity: 0.6;
+    }
+    to {
+        opacity: 0.9;
+    }
+}

@@ -1,10 +1,10 @@
 <nav class="neo-menu">
   <ul>
     <li *ngFor="let route of routes">
-      <button class="neo-button" [class.active]="route.url === currentRoute" (click)="changePage(route.url)">{{route.visibleName}}</button>
+      <button class="neo-button" [class.active]="route.url === currentRoute" (click)="changePage(route.url)" >{{route.visibleName}}</button>
     </li>
   </ul>
-  <button class="basket neo-button" [class.full]="menuBasket && menuBasket.items.length>0" (click)="basketVisible=!basketVisible">
+  <button class="basket neo-button" [class.full]="menuBasket && menuBasket.items.length>0" [disabled]="menuBasket && menuBasket.items.length === 0" (click)="basketVisible=!basketVisible">
     <span *ngIf="menuBasket && menuBasket.items.length>0" class="basket-items neo-shadow-inset-small">{{menuBasket.items.length}}</span>
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
@@ -35,14 +35,14 @@
   <div class="basket-list neo-shadow-inset-small" *ngIf="basketVisible && menuBasket && menuBasket.items.length>0" [@inOutAnimation]>
     <ul>
       <li *ngFor="let item of menuBasket.items; index as i" class="basket-item neo-shadow-small">
-        <img class="basket-item-image" [src]="item.image || './assets/no-image.png'" />
+        <img class="basket-item-image" [src]="(item.image && item.image !== 'none') ? item.image : './assets/no-image.png'" />
         <p class="basket-item-name">{{item.title}}</p>
         <span class="basket-item-price">{{item.price | currency}}</span>
         <button class="basket-item-remove neo-button" (click)="removeFromBasket(i)"><img src="./assets/close.svg" /></button>
       </li>
     </ul>
     <div class="basket-sum">
-      <button class="neo-button" (click)="openModal()">Add custom</button>
+      <button class="neo-button" (click)="openModal()" >Add custom</button>
       <p class="basket-total">{{menuBasket.total | currency}}</p>
     </div>
   </div>

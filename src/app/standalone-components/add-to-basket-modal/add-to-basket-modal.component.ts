@@ -11,7 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AddToBasketModalComponent implements OnInit {
   newProduct: ICard;
 
-  constructor(private basketService: BasketService, private sanitizer: DomSanitizer) {
+  constructor(public basketService: BasketService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
@@ -24,6 +24,7 @@ export class AddToBasketModalComponent implements OnInit {
   }
 
   convertImage(event) {
+    this.newProduct.image = 'none';
     let reader = new FileReader();
     if (event.target.files && event.target.files.length > 0) {
       let file = event.target.files[0];
