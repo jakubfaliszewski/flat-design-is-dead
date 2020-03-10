@@ -25,7 +25,7 @@ Made with ❤️  & [Angular](https://angular.io/) for WSEI
 > #### Website preview is available on Github
 > #### https://jakubfaliszewski.github.io/neomorph/
 
-1. Grab the code using code.
+1. Grab the code using Git.
 2. If you don't have Angular CLI, install it. Just follow instructions on [documentation](https://angular.io/guide/setup-local).
 3. `npm i` that bastard.
 3. Ready? Now just type `ng s -o` in console inside project directory.
