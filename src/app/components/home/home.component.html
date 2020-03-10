@@ -2,18 +2,18 @@
   <neo-title>Hear me out</neo-title>
   <div class="home-entry-image">
     <div class="home-entry-image-decoration "></div>
-    <img src="./assets/headphones.png" />
+    <img src="./assets/headphones.png" alt="White headphones"/>
   </div>
   <shapes-background></shapes-background>
 </section>
 <section class="home-content">
-  <img class="decoration-wave" src="./assets/wave.svg" />
+  <img class="decoration-wave" src="./assets/wave.svg" alt="Decoration"/>
   <div class="inner-content">
     <h2 class="h2">What are you looking for?</h2>
     <div class="cards">
       <neo-card *ngFor="let card of cards; index as i" class="neo-button" (click)="makeCardActive(i)" [class.active]="card.active">
         <neo-title>{{card.title}}</neo-title>
-        <img class="card-product" [src]="card.image" />
+        <img class="card-product" [src]="card.image" [alt]="'Headphones '+card.title " />
         <div class="card-inner neo-shadow">
           <h2>{{card.desc.title}}</h2>
           <p>{{card.desc.content}}</p>

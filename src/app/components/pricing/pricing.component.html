@@ -6,9 +6,9 @@
         <div class="pricing-info" [style.color]="card.color">
           <h2 class="h2">{{card.price | currency}}</h2>
           <p>{{card.desc.content}}</p>
-          <button class="neo-button" (click)="buyProduct(i)">Lose your money</button>
+          <button aria-label="Add product to basket" class="neo-button" (click)="buyProduct(i)">Lose your money</button>
         </div>
-        <img class="pricing-image" [src]="card.image" />
+        <img class="pricing-image" [src]="card.image" [alt]="'Headphones '+card.title" />
       </div>
     </neo-slider>
   </div>

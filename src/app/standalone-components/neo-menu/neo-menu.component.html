@@ -1,9 +1,9 @@
 <nav class="neo-menu">
-  <button class="basket-items neo-button" (click)="openModal()" [disabled]="menuBasket && menuBasket.items.length>0">
+  <button  aria-label="Add custom product" class="basket-items neo-button" (click)="openModal()" [disabled]="menuBasket && menuBasket.items.length>0">
     {{(menuBasket && menuBasket.items.length>0) ? menuBasket.items.length : null}}
-    <img *ngIf="menuBasket && menuBasket.items.length === 0" src="./assets/plus.svg" />
+    <img *ngIf="menuBasket && menuBasket.items.length === 0" src="./assets/plus.svg" alt="Plus"/>
   </button>
-  <button class="icon-button basket neo-button" [class.full]="menuBasket && menuBasket.items.length>0" [disabled]="menuBasket && menuBasket.items.length === 0" (click)="basketVisible=!basketVisible" [class.active]="basketVisible">
+  <button aria-label="Open/close basket" class="icon-button basket neo-button" [class.full]="menuBasket && menuBasket.items.length>0" [disabled]="menuBasket && menuBasket.items.length === 0" (click)="basketVisible=!basketVisible" [class.active]="basketVisible">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
     <g><g><path d="M488.542,174.916H293.737V27.028c0-10.686-8.693-19.378-19.378-19.378h-36.717c-10.686,0-19.378,8.693-19.378,19.378
@@ -33,23 +33,23 @@
   <div class="basket-list neo-shadow-inset-small" *ngIf="basketVisible && menuBasket && menuBasket.items.length>0" [@inOutAnimation]>
     <ul>
       <li *ngFor="let item of menuBasket.items; index as i" class="basket-item neo-shadow-small">
-        <img class="basket-item-image" [src]="(item.image && item.image !== 'none') ? item.image : './assets/no-image.png'" />
+        <img class="basket-item-image" [src]="(item.image && item.image !== 'none') ? item.image : './assets/no-image.png'" alt="Product image" />
         <p class="basket-item-name">{{item.title}}</p>
         <span class="basket-item-price">{{item.price | currency}}</span>
-        <button class="basket-item-remove neo-button" (click)="removeFromBasket(i)"><img src="./assets/close.svg" /></button>
+        <button aria-label="Remove item from list" class="basket-item-remove neo-button" (click)="removeFromBasket(i)"><img src="./assets/close.svg"  alt="Close"/></button>
       </li>
     </ul>
     <div class="basket-sum">
-      <button class="neo-button" (click)="openModal()">Add custom</button>
+      <button  aria-label="Add custom product" class="neo-button" (click)="openModal()">Add custom</button>
       <p class="basket-total">{{menuBasket.total | currency}}</p>
     </div>
   </div>
   <ul class="nav-list" [class.visible]="menuVisible">
     <li *ngFor="let route of routes">
-      <button class="neo-button" [class.active]="route.url === currentRoute" (click)="changePage(route.url)">{{route.visibleName}}</button>
+      <button  attr.aria-label="Go to {{route.visibleName}} page" class="neo-button" [class.active]="route.url === currentRoute" (click)="changePage(route.url)">{{route.visibleName}}</button>
     </li>
   </ul>
-  <button class="icon-button menu neo-button" (click)="showMenu()" [class.active]="menuVisible">
+  <button aria-label="Show menu" class="icon-button menu neo-button" (click)="showMenu()" [class.active]="menuVisible">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
     <g><g><path d="M438,0H74C33.196,0,0,33.196,0,74s33.196,74,74,74h364c40.804,0,74-33.196,74-74S478.804,0,438,0z M438,108H74

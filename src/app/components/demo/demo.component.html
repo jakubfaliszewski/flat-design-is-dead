@@ -1,4 +1,4 @@
-  <img class="decoration-wave" src="./assets/wave.svg" />
+  <img class="decoration-wave" src="./assets/wave.svg" alt="Decoration"/>
 <div class="video-player">
 
   <video class="neo-shadow" #nativeVideo>
@@ -6,9 +6,9 @@
     Your browser does not support the video tag.
   </video>
   <div class="video-controls">
-    <button class="play neo-button" aria-label="play pause toggle" (click)="playVideo()">
-      <img src="./assets/play.svg" *ngIf="!video.play" />
-      <img src="./assets/pause.svg" *ngIf="video.play" />
+    <button class="play neo-button" aria-label="Play video" (click)="playVideo()">
+      <img src="./assets/play.svg" *ngIf="!video.play" alt="Play"/>
+      <img src="./assets/pause.svg" *ngIf="video.play" alt="Pause"/>
     </button>
     <div class="timer" (click)="clickOnProgress($event)">
       <div class="timer-progress" [style.transform]="'scaleX(' + video.progress + ')'">
