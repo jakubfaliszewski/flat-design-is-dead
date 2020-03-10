@@ -1,5 +1,4 @@
-
-@import '../../../colors';
+@import '../../../variables';
 @import '../../../neo';
 
 :host {
@@ -13,6 +12,12 @@
   overflow: hidden;
   z-index: 2;
 
+  .decoration-wave {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    filter: drop-shadow(10px 10px 12px #c4cdd9);
+  }
 
   .video {
     &-player {
@@ -21,10 +26,13 @@
       max-width: 90%;
       position: relative;
       padding-bottom: 50px;
+      max-height: 70vh;
 
       video {
         border-radius: 20px;
-        width: 100%;
+        width: auto;
+        max-height: inherit;
+        max-width: 100%;
       }
     }
 

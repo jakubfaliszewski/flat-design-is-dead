@@ -63,6 +63,7 @@ export class NeoMenuComponent implements OnInit {
   menuBasket: IBasket;
   loading: boolean = true;
   basketVisible: boolean = false;
+  menuVisible: boolean = false;
   addToBasketModal: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private title: Title, public basketService: BasketService) {
@@ -106,10 +107,23 @@ export class NeoMenuComponent implements OnInit {
 
   changePage(url) {
     this.router.navigate([url]);
+    this.showMenu(true);
   }
 
   openModal() {
     this.basketService.modalVisible = true;
+  }
+
+  showMenu(force?: boolean) {
+    if (force) {
+      this.menuVisible = false;
+      document.body.classList.remove("overflowhide");
+      return;
+    }
+    this.menuVisible = !this.menuVisible;
+    if (this.menuVisible)
+      document.body.classList.add("overflowhide");
+    else document.body.classList.remove("overflowhide");
   }
 
 }

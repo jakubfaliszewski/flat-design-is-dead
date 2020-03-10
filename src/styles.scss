@@ -6,16 +6,30 @@ body {
   font-family: 'Raleway', sans-serif;
   color: $text-color;
   background-color: $main-color;
+
+  &.overflowhide {
+    @media only screen and (max-width: $media-m) {
+      overflow: hidden;
+    }
+  }
 }
 
 .inner-content {
   max-width: 1200px;
   margin: auto;
+
+  @media only screen and (max-width: $media-l) {
+    margin: auto 20px;
+  }
 }
 
 
-.h2{
-    font-size: 66px;
+.h2 {
+  font-size: 66px;
+
+  @media only screen and (max-width: $media-l) {
+    font-size: 40px;
+  }
 }
 
 /* CUSTOM SCROLLBAR */
