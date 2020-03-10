@@ -79,7 +79,7 @@ export class NeoMenuComponent implements OnInit {
     }
     if (event instanceof NavigationEnd) {
       setTimeout(() => {
-        this.title.setTitle("Neomorphism - " + this.route.snapshot.children[0].data.name);
+        this.title.setTitle("NEO - " + this.route.snapshot.children[0].data.name);
         this.currentRoute = this.router.routerState.snapshot.url;
       }, 50);
       setTimeout(() => {

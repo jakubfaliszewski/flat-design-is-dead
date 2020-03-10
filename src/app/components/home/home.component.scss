@@ -220,6 +220,8 @@
       }
 
       &:nth-of-type(2) {
+        margin-top: 50px;
+
         @media only screen and (max-width: $media-l) {
           margin-top: 0;
           align-self: flex-end;
