@@ -19,6 +19,9 @@ Made with ❤️  & [Angular](https://angular.io/) for WSEI
 - [x] Additional 404 page
 - [x] Custom carousel component
 - [x] Custom video component
+#### Lighthouse audit
+![image](https://user-images.githubusercontent.com/25402419/76356198-d65b6b80-6315-11ea-9eb3-85e64ed63a54.png)
+
 
 ## Instalation
 > ### **_REMINDER_**
