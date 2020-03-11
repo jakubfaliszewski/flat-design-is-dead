@@ -15,12 +15,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddToBasketModalComponent } from './standalone-components/add-to-basket-modal/add-to-basket-modal.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DemoComponent } from './components/demo/demo.component';
+import { PlaygroundComponent } from './components/playground/playground.component';
+import { TitleComponent } from './components/playground/title/title.component';
+import { IllustrationComponent } from './components/playground/illustration/illustration.component';
 
 const customComponents = [
   HomeComponent,
   PricingComponent,
   DemoComponent,
   NotFoundComponent,
+  PlaygroundComponent,
 ];
 
 const standaloneComponents = [
@@ -29,7 +33,10 @@ const standaloneComponents = [
   NeoMenuComponent,
   NeoSliderComponent,
   AddToBasketModalComponent,
-  ShapesBackgroundComponent
+  ShapesBackgroundComponent,
+  // PLAYGROUND
+  TitleComponent,
+  IllustrationComponent,
 ];
 
 @NgModule({

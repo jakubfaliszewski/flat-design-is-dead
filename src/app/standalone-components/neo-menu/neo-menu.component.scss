@@ -21,7 +21,7 @@
 
     li {
 
-      @media only screen and (max-width: $media-m) {
+      @media only screen and (max-width: $media-l) {
         margin: 0 0 20px;
         width: 70%;
 
@@ -37,7 +37,7 @@
         margin-right: 20px;
       }
 
-      @media only screen and (max-width: $media-m) {
+      @media only screen and (max-width: $media-l) {
         transition: 0.4s;
         opacity: 0;
         pointer-events: none;
@@ -83,7 +83,7 @@
       left: 10px;
       display: none;
 
-      @media only screen and (max-width: $media-m) {
+      @media only screen and (max-width: $media-l) {
         display: block;
       }
     }
@@ -183,7 +183,7 @@
             margin-bottom: 0;
           }
 
-          @media only screen and (max-width: $media-m) {
+          @media only screen and (max-width: $media-l) {
             font-size: 0.8em;
             height: 40px;
             margin-bottom: 20px;

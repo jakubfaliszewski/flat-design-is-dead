@@ -16,7 +16,7 @@
 }
 
 @mixin neo-box-shadow {
-  box-shadow: 7px 7px 14px #c4cdd9, -7px -7px 14px #ffffff;
+  box-shadow: inset 5px 5px 7px rgba(#c4cdd9,0), inset -5px -5px 7px rgba(#ffffff, 0), 7px 7px 14px #c4cdd9, -7px -7px 14px #ffffff;
 }
 
 

@@ -55,7 +55,11 @@ export class NeoMenuComponent implements OnInit {
     {
       visibleName: 'Demo',
       url: '/demo'
-    }
+    },
+    {
+      visibleName: 'Playground',
+      url: '/playground'
+    },
   ];
 
   currentRoute = '/';

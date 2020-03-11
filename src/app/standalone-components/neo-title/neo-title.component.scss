@@ -7,4 +7,7 @@
   margin-left: 0.5em;
   @include neo-text-shadow-inset;
 
-}
+  @media only screen and (max-width: $media-l) {font-size: 5em}
+  @media only screen and (max-width: $media-m) {font-size: 3.7em}
+
+  }
