@@ -9,7 +9,7 @@ See live:  https://jakubfaliszewski.github.io/neomorph/
 - [x] File organization should be intuituve and clear.
 - [x] Website should be responsive (360 - 1920).
 - [ ] ~~Menu items with SVG icons~~
-- [x] There's already plenty of SVGs on website - in Home page Background for example. Please look into the code.
+- [x] There's already plenty of SVGs on website - for example in additional menu (basket), video component or background. Please look into the code.
 - [x] Video tag on one of subpages.
 - [x] Implement behavior states for menu items (static, hover, being on subpage)
 - [ ] ~~ToDo List~~
