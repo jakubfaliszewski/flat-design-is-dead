@@ -1,9 +1,11 @@
-# Neomorphism
+# Neomorph
 Made with ❤️  & [Angular](https://angular.io/) for WSEI
+
+See live:  https://jakubfaliszewski.github.io/neomorph/
 
 
 ## Website assumptions
-- [ ] At least 4 subpages.
+- [x] At least 4 subpages.
 - [x] File organization should be intuituve and clear.
 - [x] Website should be responsive (360 - 1920).
 - [ ] ~~Menu items with SVG icons~~
