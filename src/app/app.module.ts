@@ -43,7 +43,7 @@ const standaloneComponents = [
   declarations: [
     AppComponent,
     customComponents,
-    standaloneComponents,
+    standaloneComponents
   ],
   imports: [
     BrowserModule,

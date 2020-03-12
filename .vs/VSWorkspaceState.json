@@ -4,11 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\home",
-    "\\src\\app\\standalone-components",
-    "\\src\\app\\standalone-components\\shapes-background",
+    "\\src\\app\\components\\demo",
+    "\\src\\app\\components\\playground",
+    "\\src\\app\\components\\playground\\illustration",
+    "\\src\\app\\components\\playground\\title",
+    "\\src\\app\\components\\pricing",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\standalone-components\\shapes-background\\shapes-background.component.scss",
+  "SelectedNode": "\\src\\app\\components\\demo\\demo.component.html",
   "PreviewInSolutionExplorer": false
 }

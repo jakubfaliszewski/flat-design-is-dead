@@ -1,6 +1,6 @@
 <img class="decoration-wave" src="./assets/wave.svg" alt="Decoration" />
 <section class="video-player">
-  <div class="video-player-loader" *ngIf="nativeVideo.readyState<3">
+  <div class="video-player-loader" *ngIf="!video.ready">
     <div><div></div></div>
   </div>
   <video class="neo-shadow" #nativeVideo>
@@ -17,9 +17,7 @@
       </div>
     </div>
     <span class="video-time" aria-label="timer">
-      {{
-video.time.minutes | number:'2.0'
-      }}:{{video.time.seconds | number:'2.0'}}
+      {{video.time.minutes | number:'2.0'}}:{{video.time.seconds | number:'2.0'}}
     </span>
   </div>
 </section>

@@ -10,6 +10,7 @@ export class DemoComponent implements OnInit {
 
   video = {
     play: false,
+    ready: false,
     time: {
       minutes: 0,
       seconds: 0
@@ -39,6 +40,11 @@ export class DemoComponent implements OnInit {
 
     this.nativeVideo.nativeElement.addEventListener('ended', () => {
       this.video.play = false;
+    });
+    this.nativeVideo.nativeElement.addEventListener('loadeddata', () => {
+      if (this.nativeVideo.nativeElement.readyState >= 2) {
+        this.video.ready = true;
+      }
     });
   }
 
